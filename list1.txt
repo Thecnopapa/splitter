@@ -1,0 +1,10 @@
+>>Days:31,1,2,3,4,5,6
+
+> Xixa:0,1,2,3,4,5
+> Nico:0,1,2,3,4,5
+> Roldan:0,1,2
+> Felix:0,1,2,3,4
+> Laura:1,2,3,4,5
+> Carlos:1,2,3,4,5
+> Mateo:na
+> Chichi:na
