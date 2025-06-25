@@ -34,22 +34,24 @@ class People:
         end_i = len(self.days)-1
         if end is not None:
             end_i = self.days.index(int(end))
-        print("Calculating for days:", self.days[start_i:end_i+1], start_i, end_i)
+        print("\nCalculating split for days:", self.days[start_i:end_i+1], start_i, end_i)
         shares = 0
         people_counts = {name:0 for name in self.people.keys()}       
         for n, day in enumerate(self.days[start_i:end_i]):
-            print("Night: {}-{} ({}):".format(day, self.days[n+1], n), end=" ")
+            print(">{}-{} ({})\t:".format(day, self.days[n+1], n), end=" ")
+            people_today = 0
             for name, nights in self.people.items():
                 if nights is None:
                     continue
                 if n in nights:
                     people_counts[name] += 1
+                    people_today += 1
                     shares +=1
                     print(name, end= " ")
-            print("\n")
-        print("The price will be dividided in {} shares:".format(shares))
+            print(" /total: {}".format(people_today))
         share_price = value / shares
-        [print("> {}: \t{} shares \t= {} euro:".format(name, count, round(count*share_price,2))) for name, count in people_counts.items()]
+        print("\nThe price ({}€) will be dividided in {} shares ({}€):".format(value, shares, round(share_price,2)))
+        [print("> {}: \t{} shares \t= {}€:".format(name, count, round(count*share_price,2))) for name, count in people_counts.items()]
 
 
             
