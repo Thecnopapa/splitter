@@ -6,5 +6,5 @@
 > Felix:0,1,2,3,4
 > Laura:1,2,3,4,5
 > Carlos:1,2,3,4,5
-> Mateo:na
-> Chichi:na
+> Mateo:3,4,5
+> Chichi:3,4,5

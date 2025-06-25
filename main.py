@@ -38,16 +38,18 @@ class People:
         shares = 0
         people_counts = {name:0 for name in self.people.keys()}       
         for n, day in enumerate(self.days[start_i:end_i]):
-            print(n, day)
+            print("Night: {}-{} ({}):".format(day, self.days[n+1], n), end=" ")
             for name, nights in self.people.items():
                 if nights is None:
                     continue
                 if n in nights:
                     people_counts[name] += 1
                     shares +=1
+                    print(name, end= " ")
+            print("\n")
         print("The price will be dividided in {} shares:".format(shares))
         share_price = value / shares
-        [print("{}: {}shares = {} euro:".format(name, count, round(count*share_price,2))) for name, count in people_counts.items()]
+        [print("> {}: \t{} shares \t= {} euro:".format(name, count, round(count*share_price,2))) for name, count in people_counts.items()]
 
 
             
@@ -56,7 +58,7 @@ class People:
 
 if __name__ == "__main__":
     print(sys.argv)
-    people = People("/cri4/iain/splitter/list1.txt")
+    people = People("list1.txt")
     print("DAYS:", people.days)
     print("PEOPLE:")
     [print("{}: {}".format(name, nights)) for name, nights in people.people.items()]
